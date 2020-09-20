@@ -6,6 +6,7 @@
         <input type="password" formControlName="inputPassword" class="form-control" placeholder="Password">
         <label class="alert alert-danger" *ngIf="inputPasswordInvalid">Password needed</label>
         <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formSubmit.valid">Login</button>
+        <label class="alert alert-danger" *ngIf="!validLogin">Invalid Username and/or password</label>
     </form>
     <a routerLink="/register">Register</a>
 </div>
