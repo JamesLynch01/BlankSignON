@@ -7,9 +7,7 @@ import { AuthModule } from './auth.module';
 export class AuthService {
 
   readonly TOKEN = 'token';
-  users: any[] = [
-    { username: 'test@test.com', password: 'test'}
-  ];
+  users: any[] = [];
 
   get getToken(): string {
     return sessionStorage.getItem(this.TOKEN);

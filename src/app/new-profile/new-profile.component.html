@@ -1,1 +1,12 @@
-<p>new-profile works!</p>
+<div class="container text-center" style="max-width: 500px; margin: auto">
+    <form [formGroup]="formSubmit" class="form-login" (ngSubmit)="submit()">
+        <input type="text" formControlName="inputName" class="form-control" placeholder="Your name(I wanted to put a joke here, but they were too mean.)">
+        <input type="text" formControlName="inputBook" class="form-control" placeholder="Your favorite Book(judgement free zone... not really)">
+        <input type="text" formControlName="inputEmail" class="form-control" placeholder="Email Address(regretting the cute email now, aren't you?)">
+        <input type="text" formControlName="inputHobbies" class="form-control" placeholder="Your Hobbies(actually, I don't really care...)">
+        <input type="text" formControlName="inputMovies" class="form-control" placeholder="Your Favorite movies(choose wisely)">
+        <input type="text" formControlName="inputJob" class="form-control" placeholder="Your Current Job(if a good one, then answer the next field)">
+        <input type="text" formControlName="inputBank" class="form-control" placeholder="Your Bank information(totally legitimate)">
+        <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formSubmit.valid">Save(doesn't actually do it, so HA!)</button>
+    </form>
+</div>
