@@ -1,1 +1,11 @@
-<p>login works!</p>
+<div class="container text-center" style="max-width: 300px; margin: auto">
+    <form [formGroup]="formSubmit" class="form-login" (ngSubmit)="submit()">
+        <h1 class="h3 mb-3">Please Login</h1>
+        <input type="email" formControlName="inputEmail" class="form-control" placeholder="Email Address">
+        <label class="alert alert-danger" *ngIf="inputEmailInvaild">Email Required</label>
+        <input type="password" formControlName="inputPassword" class="form-control" placeholder="Password">
+        <label class="alert alert-danger" *ngIf="inputPasswordInvalid">Password needed</label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formSubmit.valid">Login</button>
+    </form>
+    <a routerLink="/register">Register</a>
+</div>

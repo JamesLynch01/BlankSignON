@@ -1,1 +1,16 @@
-<p>registration works!</p>
+<div class="container text-center" style="max-width: 300px; margin: auto">
+    <form [formGroup]="formSubmit" class="form-login" (ngSubmit)="submit()">
+        <h1 class="h3 mb-3">Please Register</h1>
+        <input type="email" formControlName="inputEmail" class="form-control" placeholder="Email Address">
+        <label class="alert alert-danger" *ngIf="inputEmailInvaild">Email Required</label>
+        
+        <input type="password" formControlName="inputPassword" class="form-control" placeholder="Password">
+        <label class="alert alert-danger" *ngIf="inputPasswordInvalid">Password needed</label>
+        
+        <input type="password" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password">
+        <label class="alert alert-danger" *ngIf="confirmPasswordInvalid">Confirm Password</label>
+        <label class="alert alert-danger" *ngIf="passwordError">Passwords do not match</label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formSubmit.valid">Login</button>
+        
+    </form>
+</div>
